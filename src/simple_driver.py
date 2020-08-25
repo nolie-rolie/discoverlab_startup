@@ -30,12 +30,15 @@ try:
         # set the forward velocity to 1.0 m/s
         cmd_vel.linear.x = 1.0
 
+        # set the angular velocity to 1.0 rad/s counterclockwise
+        cmd_vel.angular.z = 1.0
+
+
         #############################################
-       
+
         controller.publish(cmd_vel)
         rate.sleep()
 
 except rospy.ROSInterruptException:
     # Quit gracefully with ^C
     pass
-
